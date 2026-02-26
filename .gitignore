@@ -21,6 +21,8 @@ env/
 mlflow/mlruns/
 mlflow/artifacts/
 
-
 .DS_Store
 *.log
+-e
+
+reports/*.html
