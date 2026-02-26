@@ -1,0 +1,15 @@
+artifact_uri: /app/mlruns/287910478034067690/72777398b39d4df09b4f712e106c18ed/artifacts
+end_time: 1772090821261
+entry_point_name: ''
+experiment_id: '287910478034067690'
+lifecycle_stage: active
+run_id: 72777398b39d4df09b4f712e106c18ed
+run_name: polite-quail-581
+run_uuid: 72777398b39d4df09b4f712e106c18ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772090784556
+status: 4
+tags: []
+user_id: wyllgner

@@ -1,22 +1,21 @@
-version: "3.9"
 
 services:
   mlflow:
-    image: python:3.11-slim
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.mlflow
     container_name: fraud_mlflow
-    working_dir: /app
     volumes:
       - ./mlflow:/app/mlruns
-      - ./requirements.txt:/app/requirements.txt
     ports:
       - "5000:5000"
     command: >
-      bash -c "pip install mlflow --quiet &&
-               mlflow server
-               --host 0.0.0.0
-               --port 5000
-               --backend-store-uri /app/mlruns
-               --default-artifact-root /app/mlruns"
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri /app/mlruns
+      --default-artifact-root /app/mlruns
+      --serve-artifacts
 
   api:
     build:

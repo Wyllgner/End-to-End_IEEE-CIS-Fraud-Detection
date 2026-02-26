@@ -1,0 +1,15 @@
+artifact_uri: /app/mlruns/287910478034067690/0c59acfa14064d958eda7c84b2c26168/artifacts
+end_time: 1772091022871
+entry_point_name: ''
+experiment_id: '287910478034067690'
+lifecycle_stage: active
+run_id: 0c59acfa14064d958eda7c84b2c26168
+run_name: glamorous-cat-527
+run_uuid: 0c59acfa14064d958eda7c84b2c26168
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772090989780
+status: 4
+tags: []
+user_id: wyllgner
