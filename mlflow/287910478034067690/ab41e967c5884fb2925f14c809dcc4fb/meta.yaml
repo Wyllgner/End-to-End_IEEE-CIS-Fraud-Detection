@@ -1,0 +1,15 @@
+artifact_uri: /app/mlruns/287910478034067690/ab41e967c5884fb2925f14c809dcc4fb/artifacts
+end_time: 1772098479937
+entry_point_name: ''
+experiment_id: '287910478034067690'
+lifecycle_stage: active
+run_id: ab41e967c5884fb2925f14c809dcc4fb
+run_name: popular-crow-676
+run_uuid: ab41e967c5884fb2925f14c809dcc4fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772098363990
+status: 4
+tags: []
+user_id: wyllgner

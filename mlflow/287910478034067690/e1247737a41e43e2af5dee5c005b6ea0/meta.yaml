@@ -1,0 +1,15 @@
+artifact_uri: /app/mlruns/287910478034067690/e1247737a41e43e2af5dee5c005b6ea0/artifacts
+end_time: 1772098780956
+entry_point_name: ''
+experiment_id: '287910478034067690'
+lifecycle_stage: active
+run_id: e1247737a41e43e2af5dee5c005b6ea0
+run_name: ambitious-bear-422
+run_uuid: e1247737a41e43e2af5dee5c005b6ea0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772098652329
+status: 4
+tags: []
+user_id: wyllgner

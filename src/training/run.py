@@ -1,3 +1,4 @@
+
 import os
 import sys
 import mlflow
@@ -7,15 +8,8 @@ from mlflow.models.signature import infer_signature
 sys.path.append(os.path.dirname(__file__))
 
 from config import (
-    INPUT_FILE,
-    TARGET_COL,
-    DROP_COLS,
-    TEST_SIZE,
-    RANDOM_STATE,
-    MLFLOW_TRACKING_URI,
-    MLFLOW_EXPERIMENT,
-    MODEL_NAME,
-    LGBM_PARAMS,
+    INPUT_FILE, TARGET_COL, DROP_COLS, TEST_SIZE, RANDOM_STATE,
+    MLFLOW_TRACKING_URI, MLFLOW_EXPERIMENT, MODEL_NAME, LGBM_PARAMS,
 )
 from utils import load_features, split_data, train_model, evaluate, get_feature_importance
 
@@ -40,17 +34,16 @@ def run():
         for k, v in metrics.items():
             print(f"  {k}: {v:.4f}")
 
-        print("logging to mlflow...")
         mlflow.log_params(LGBM_PARAMS)
         mlflow.log_metrics(metrics)
 
-        importance_df = get_feature_importance(model, X_train.columns.tolist())
-        importance_path = "/tmp/feature_importance.csv"
-        importance_df.to_csv(importance_path, index=False)
-        mlflow.log_artifact(importance_path)
+        importance = get_feature_importance(model, X_train.columns.tolist())
+        for _, row in importance.head(10).iterrows():
+            mlflow.log_param(f"top_feat_{row['feature']}", round(float(row["importance"]), 2))
 
+        print("registering model...")
         signature = infer_signature(X_train, model.predict_proba(X_train)[:, 1])
-        mlflow.sklearn.log_model(
+        model_info = mlflow.sklearn.log_model(
             sk_model=model,
             artifact_path="model",
             signature=signature,
@@ -58,6 +51,7 @@ def run():
         )
 
         print(f"run id: {run.info.run_id}")
+        print(f"model uri: {model_info.model_uri}")
         print(f"model registered as: {MODEL_NAME}")
 
 

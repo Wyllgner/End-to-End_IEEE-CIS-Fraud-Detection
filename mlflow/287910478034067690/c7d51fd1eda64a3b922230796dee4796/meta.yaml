@@ -1,0 +1,15 @@
+artifact_uri: /app/mlruns/287910478034067690/c7d51fd1eda64a3b922230796dee4796/artifacts
+end_time: 1772098177096
+entry_point_name: ''
+experiment_id: '287910478034067690'
+lifecycle_stage: active
+run_id: c7d51fd1eda64a3b922230796dee4796
+run_name: abrasive-hen-992
+run_uuid: c7d51fd1eda64a3b922230796dee4796
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772098137007
+status: 4
+tags: []
+user_id: wyllgner
